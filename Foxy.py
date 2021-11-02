@@ -35,8 +35,8 @@ def take_command():
             voice = listener.listen(source)
             command = listener.recognize_google(voice)
             command = command.lower()
-            if 'alpha' in command:
-                command = command.replace('alpha', '')
+            if 'foxy' in command:
+                command = command.replace('foxy', '')
                 print(command)
     except:
         pass
@@ -66,6 +66,12 @@ def run_foxy():
     elif 'do you had your breakfast' in command:
         talk('Sorry I am a machine so I cannot eat anything')
 
+    elif 'you are bad' in command:
+        talk('Common nerd i am not your father\'s servant')
+
+    elif 'about' in command:
+        talk('I am currently under development I am in Version 1 now!')
+
     elif 'open gx' in command:
         subprocess.call('C://Users//HP//AppData//Local//Programs//Opera GX//launcher.exe')
         talk('Opening GX')
@@ -90,6 +96,18 @@ def run_foxy():
         subprocess.call('E://PyCharm Community Edition 2021.2.2//bin//pyharm64.exe')
         talk("Opening Pycharm")
 
+    elif 'open youtube' in command:
+            webbrowser.open("www.youtube.com")
+            talk("Opening Youtube")
+
+    elif 'open twitter' in command:
+            webbrowser.open("www.twitter.com")
+            talk("Opening Twitter")
+
+    elif 'open twitch' in command:
+            webbrowser.open("www.twitch.tv")
+            talk("Opening Twitch")
+
     elif 'open github' in command:
             webbrowser.open("www.github.com")
             talk("Opening Github")
@@ -102,7 +120,7 @@ def run_foxy():
             webbrowser.open("www.namemc.com")
             talk("Opening Namemc")
 
-    elif 'email to harry' in command:
+    elif 'email to xyz' in command:
             try:
                 talk("What should I say?")
                 content = take_command()
@@ -116,6 +134,7 @@ def run_foxy():
 
     else:
         print('**********YOU DIDN\'T MENTIONED FOXY PLEASE TRY AGAIN**********')
+        talk('Please Read Console and say the command again')
 
 
 while True:
