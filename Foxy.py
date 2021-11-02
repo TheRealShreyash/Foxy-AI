@@ -92,12 +92,15 @@ def run_foxy():
 
     elif 'open github' in command:
             webbrowser.open("www.github.com")
+            talk("Opening Github")
 
     elif 'open amazon' in command:
             webbrowser.open("www.amazon.com")
+            talk("Opening Amazon")
 
-    elif 'open namemc' in command:
+    elif 'open name mc' in command:
             webbrowser.open("www.namemc.com")
+            talk("Opening Namemc")
 
     elif 'email to harry' in command:
             try:
