@@ -63,12 +63,6 @@ def run_foxy():
         print(time)
         talk("Current time is" + time)
 
-    elif 'who is technoblade' in command:
-        person = command.replace('who is', '')
-        info = wikipedia.summary(person, 10)
-        print(info)
-        talk(info)
-
     elif 'do you had your breakfast' in command:
         talk('Sorry I am a machine so I cannot eat anything')
 
@@ -109,7 +103,7 @@ def run_foxy():
             try:
                 talk("What should I say?")
                 content = take_command()
-                to = "harryyourEmail@gmail.com"    
+                to = "xyz@gmail.com"    
                 sendEmail(to, content)
                 talk("Email has been sent!")
             except Exception as e:
