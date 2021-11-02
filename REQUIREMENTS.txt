@@ -1,0 +1,11 @@
+Modules required for the AI to run
+
+1. Speech Recognition
+2. Pyttsx3
+3. Pyaudio
+4. Pywhatkit
+5. Datetime
+6. wikipedia
+7. subprocess
+8. webbrowser
+9. smtplib

@@ -1,3 +1,5 @@
+# THESE IMPORTS ARE REQUIRED FOR THIS AI TO RUN
+
 import speech_recognition as sr
 import pyttsx3 as pyt
 import pyaudio
@@ -5,6 +7,8 @@ import pywhatkit as wht
 import datetime
 import wikipedia
 import subprocess
+import webbrowser
+import smtplib
 
 # Making a new listener
 listener = sr.Recognizer()
@@ -38,6 +42,13 @@ def take_command():
         pass
     return command
 
+def sendEmail(to, content):
+    server = smtplib.SMTP('smtp.gmail.com', 587)
+    server.ehlo()
+    server.starttls()
+    server.login('youremail@gmail.com', 'your-password')
+    server.sendmail('youremail@gmail.com', to, content)
+    server.close()
 
 def run_foxy():
     command = take_command()
@@ -61,8 +72,8 @@ def run_foxy():
     elif 'do you had your breakfast' in command:
         talk('Sorry I am a machine so I cannot eat anything')
 
-    elif 'open brave' in command:
-        subprocess.call('C://Program Files//BraveSoftware//Brave-Browser//Application//brave.exe')
+    elif 'open gx' in command:
+        subprocess.call('C://Users//HP//AppData//Local//Programs//Opera GX//launcher.exe')
         talk('Opening Brave')
 
     elif 'open vs code' in command:
@@ -76,6 +87,35 @@ def run_foxy():
     elif 'open chrome' in command:
         subprocess.call('C://Program Files//Google//Chrome//Application//chrome.exe')
         talk("Opening chrome")
+
+    elif 'open Intellij' in command:
+        subprocess.call('E://IntelliJ IDEA Community Edition 2021.2.1//bin//idea64.exe')
+        talk("Opening Intellij")
+
+    elif 'open pychram' in command:
+        subprocess.call('E://PyCharm Community Edition 2021.2.2//bin//pyharm64.exe')
+        talk("Opening Pycharm")
+
+    elif 'open github' in command:
+            webbrowser.open("github.com")
+
+    elif 'open amazon' in command:
+            webbrowser.open("amazon.com")
+
+    elif 'open namemc' in command:
+            webbrowser.open("namemc.com")
+
+    elif 'email to harry' in command:
+            try:
+                talk("What should I say?")
+                content = take_command()
+                to = "harryyourEmail@gmail.com"    
+                sendEmail(to, content)
+                talk("Email has been sent!")
+            except Exception as e:
+                print(e)
+                talk("Sorry my friend. I am not able to send this email")    
+
 
     else:
         print('**********YOU DIDN\'T MENTIONED FOXY PLEASE TRY AGAIN**********')
