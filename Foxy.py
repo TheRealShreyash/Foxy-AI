@@ -68,7 +68,7 @@ def run_foxy():
 
     elif 'open gx' in command:
         subprocess.call('C://Users//HP//AppData//Local//Programs//Opera GX//launcher.exe')
-        talk('Opening Brave')
+        talk('Opening GX')
 
     elif 'open vs code' in command:
         subprocess.call('C://Users//HP//AppData//Local//Programs//Microsoft VS Code//code.exe')
